@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+:root {
+    --bg: #cc8ee4;
+    --user: #611c91;
+    --title: #fbaf18;
+    --bold: #333333;
+    --body: #ffffff;
+}
+img{
+    width: 100%;
+}
+.btn{
+    color: var(--body);
+    background: var(--user);
+    border-radius: 7px;
+    height: 43px;
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    transition: .4s ease-in-out;
+}
+.btn:hover{
+    background: var(--bg);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 77777;
+    height: 80px;
+    padding-inline: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav.active{
+    background: var(--body);
+    border-bottom: 1px solid var(--title);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+}
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+nav .logo i{
+    font-size: 1.5rem;
+    padding-right: 8px;
+    color: var(--bold);
+}
+nav .logo h2{
+    font-size: 1.2rem;
+    color: var(--bold);
+}
+nav .logo h2 span{
+    color: var(--title);
+}
+nav ul li a{
+    color: var(--user);
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 7px;
+    transition: .4s ease-in-out;
+}
+nav ul li a:hover{
+    color: var(--body);
+    background: var(--bg);
+}
+nav #user{
+    color: var(--body);
+    background: var(--user);
+    border-radius: 7px;
+    padding: 15px;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+nav #user:hover{
+    background: var(--bg);
+}
+nav #burger{
+    display: none;
+}
+header{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    align-items: center;
+    padding-inline: 100px;
+}
+header .text{
+    width: 305px;
+}
+header .text p{
+    font-size: .9rem;
+    margin: 20px 0;
+}
+header .text form{
+    display: flex;
+    flex-direction: column;
+}
+header .text form label{
+    font-size: .8rem;
+    color: grey;
+    margin-bottom: 5px;
+}
+header .text form input{
+    border: 1px solid black;
+    height: 42px;
+    width: 100%;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+header .text form .button{
+    width: 305px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    margin-top: 10px;
+}
+header .text form .button .btn{
+    cursor: pointer;
+    width: 100%;
+    font-size: .9rem;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+}
+footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, auto));
+    gap: 2rem;
+    justify-content: center;
+    background: var(--user);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 50px;
+}
+footer h3{
+    color: var(--body);
+    text-align: center;
+}
+footer span{
+    color: var(--body);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+footer ul li a{
+    color: var(--title);
+}
+footer .liens, .locations, .contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+}
+footer ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+}
+footer .contact .socialsone{
+    display: flex;
+    column-gap: 10px;
+}
+footer .contact .socialsone a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--title);
+    color: var(--body);
+    border-radius: 50%;
+    /*padding: 5px;*/
+    height: 30px;
+    width: 30px;
+}
+.copy{
+    height: 85px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copy p{
+    font-size: .8rem;
+}
+
+@media screen and (max-width: 900px) {
+    nav ul{
+        position: absolute;
+        top: 79px;
+        right: -100%;
+        width: 280px;
+        min-height: 100vh;
+        flex-direction: column;
+        gap: 3rem;
+        background: var(--body);
+        border-left: 1px solid orange;
+        box-shadow: -1px -1px 5px rgba(0, 0, 0, .2);
+        padding-left: 20px;
+        padding-top: 30px;
+        transition: .4s ease-in-out;
+    }
+    nav ul.active{
+        right: 0;
+    }
+    nav ul li a{
+        padding-right: 9rem;
+    }
+    nav #burger{
+        display: block;
+        font-size: 2rem;
+        color: var(--user);
+        cursor: pointer;
+        transition: .4s ease-in-out;
+    }
+    nav #burger:hover{
+        color: var(--bg);
+    }
+    header{
+        padding: 80px 15px 0;
+    }
+    header .text{
+        width: 100%;
+    }
+    header .text form .button{
+        width: 100%;
+        margin-bottom: 80px;
+    }
+    header .image{
+        display: none;
+    }
+}

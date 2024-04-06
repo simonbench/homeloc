@@ -1,0 +1,410 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+:root {
+    --bg: #cc8ee4;
+    --user: #611c91;
+    --title: #fbaf18;
+    --bold: #333333;
+    --body: #ffffff;
+}
+img{
+    width: 100%;
+}
+section{
+    padding: 35px 100px;
+}
+.btn{
+    color: var(--body);
+    background: var(--user);
+    border-radius: 7px;
+    /*padding: 10px 15px;*/
+    height: 43px;
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    transition: .4s ease-in-out;
+}
+.btn:hover{
+    background: var(--bg);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 77777;
+    height: 80px;
+    padding-inline: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav.active{
+    background: var(--body);
+    border-bottom: 1px solid var(--title);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+}
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+nav .logo i{
+    font-size: 1.5rem;
+    padding-right: 8px;
+    color: var(--bold);
+}
+nav .logo h2{
+    font-size: 1.2rem;
+    color: var(--bold);
+}
+nav .logo h2 span{
+    color: var(--title);
+}
+nav ul{
+    display: flex;
+}
+nav ul li a{
+    color: var(--user);
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 7px;
+    transition: .4s ease-in-out;
+}
+nav ul li a.active, nav ul li a:hover{
+    color: var(--body);
+    background: var(--bg);
+}
+nav #user{
+    color: var(--body);
+    background: var(--user);
+    border-radius: 7px;
+    padding: 15px;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+nav #user:hover{
+    background: var(--bg);
+}
+nav #burger{
+    display: none;
+}
+#header{
+    padding-top: 95px;
+}
+#header .container{
+    height: 452px;
+    width: 100%;
+    background: url(images/home.jpg)center/cover;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 35px;
+}
+#header .container h1{
+    color: var(--body);
+    font-size: clamp(30px, 5vw, 45px);
+}
+#header .container .store{
+    width: 150px;
+    display: flex;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#about{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 2rem;
+}
+#about .image img{
+    border-radius: 90px 90px 0 90px;
+}
+#about .text span{
+    color: var(--title);
+}
+#about .text h1{
+    font-size: 1.4rem;
+}
+#about .text p{
+    padding: 10px 0;
+    font-size: .9rem;
+}
+#about .text .btnone{
+    display: inline-block;
+    padding: 10px 15px;
+    color: var(--body);
+    background: var(--user);
+    border-radius: 7px;
+    margin-top: 20px;
+    transition: .4s ease-in-out;
+}
+#about .text .btnone:hover{
+    background: var(--bg);
+}
+#services{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 2rem;
+}
+#services .cards{
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    transition: .4s ease-in-out;
+}
+#services .cards:hover{
+    background: var(--user);
+    color: var(--body);
+}
+#services .cards i{
+    font-size: 2.3rem;
+    color: var(--user);
+    background: rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    padding: 10px;
+}
+#services .cards h2{
+    font-size: 1rem;
+}
+#services .cards p{
+    font-size: .9rem;
+    text-align: center;
+}
+#locations .titles{
+    text-align: center;
+    margin-bottom: 30px;
+}
+#locations .titles .title{
+    color: var(--title);
+}
+#locations .titles p{
+    font-size: .9rem;
+}
+#locations .container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    gap: 3rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+#locations .container .cartes{
+    /*height: 320px;*/
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    padding: 10px;
+    transition: .4s ease-in-out;
+}
+#locations .container .cartes:hover{
+    transform: translateY(-10px);
+}
+#locations .container .cartes img{
+    height: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+    /*padding: 10px;*/
+}
+#locations .container .cartes .price{
+    font-weight: 600;
+    /*float: right;*/
+    display: flex;
+    justify-content: right;
+}
+#locations .container .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#locations .container .content .titlesone h1{
+    font-size: .9rem;
+}
+#locations .container .content .titlesone .city{
+    font-size: .9rem;
+}
+#locations .container .content .icones{
+    display: flex;
+    column-gap: 1rem;
+}
+#locations .container .content .icones span{
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+}
+#locations .container .content .icones i{
+    font-size: 1rem;
+    padding-right: 5px;
+}
+.form{
+    text-align: center;
+    margin-top: 85px;
+}
+.form h1{
+    font-size: 1.5rem;
+    margin-bottom: 35px;
+}
+.form form{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    max-width: 960px;
+    margin: 0 auto;
+    width: 395px;
+}
+.form form input{
+    height: 55px;
+    width: 100%;
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    padding-left: 10px;
+    font-size: 1rem;
+}
+.form form input::placeholder{
+    font-size: 1rem;
+}
+.form form button{
+    position: absolute;
+    right: .5rem;
+    bottom: 8px;
+    background: var(--user);
+    color: var(--body);
+    border-radius: 7px;
+    height: 40px;
+    width: 90px;
+    cursor: pointer;
+}
+footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, auto));
+    gap: 2rem;
+    justify-content: center;
+    background: var(--user);
+    margin-top: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 50px;
+}
+footer h3{
+    color: var(--body);
+    text-align: center;
+}
+footer span{
+    color: var(--body);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+footer ul li a{
+    color: var(--title);
+}
+footer .liens, .locations, .contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+}
+footer ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+}
+footer .contact .socialsone{
+    display: flex;
+    column-gap: 10px;
+}
+footer .contact .socialsone a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--title);
+    color: var(--body);
+    border-radius: 50%;
+    /*padding: 5px;*/
+    height: 30px;
+    width: 30px;
+}
+.copy{
+    height: 85px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copy p{
+    font-size: .8rem;
+}
+
+@media screen and (max-width: 998px) {
+    nav ul{
+        position: absolute;
+        top: 79px;
+        right: -100%;
+        width: 280px;
+        min-height: 100vh;
+        flex-direction: column;
+        gap: 3rem;
+        background: var(--body);
+        border-left: 1px solid orange;
+        box-shadow: -1px -1px 5px rgba(0, 0, 0, .2);
+        padding-left: 20px;
+        padding-top: 30px;
+        transition: .4s ease-in-out;
+    }
+    nav ul.active{
+        right: 0;
+    }
+    nav ul li a{
+        padding-right: 9rem;
+    }
+    nav #burger{
+        display: block;
+        font-size: 2rem;
+        color: var(--user);
+        cursor: pointer;
+        transition: .4s ease-in-out;
+    }
+    nav #burger:hover{
+        color: var(--bg);
+    }
+    section{
+        padding: 45px 0;
+    }
+    #header .container{
+        padding-left: 20px;
+    }
+    #header .container .store{
+        width: 100px;
+    }
+    #about{
+        padding-inline: 8px;
+    }
+    #about .text{
+        text-align: center;
+    }
+    #locations .container{
+        /*grid-template-columns: repeat(2, auto);
+        gap: 1rem;*/
+        padding-inline: 20px;
+    }
+    .form form input{
+        margin-inline: 20px;
+    }
+}
